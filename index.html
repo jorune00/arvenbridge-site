@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arven Bridge LLC — Software, Networking & Contracting</title>
+  <meta name="description" content="Arven Bridge LLC is an Illinois company delivering software products, network engineering, and technical contracting services.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M4 44 Q32 12 60 44' stroke='%23EA580C' stroke-width='6' fill='none'/%3E%3Cpath d='M4 48 H60' stroke='%23F97316' stroke-width='5'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --orange: #EA580C;
+      --orange-bright: #F97316;
+      --orange-soft: #FFF7ED;
+      --orange-border: #FED7AA;
+      --ink: #1E293B;
+      --muted: #64748B;
+      --white: #FFFFFF;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--ink);
+      background: var(--white);
+      line-height: 1.6;
+    }
+    h1, h2, h3 { font-family: 'Sora', 'Inter', sans-serif; line-height: 1.2; }
+    a { color: var(--orange); text-decoration: none; }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+    /* Nav */
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #F1F5F9;
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .brand { display: flex; align-items: center; gap: 10px; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.15rem; color: var(--ink); }
+    .brand svg { width: 34px; height: 34px; }
+    .nav-links { display: flex; gap: 28px; font-size: 0.95rem; font-weight: 500; }
+    .nav-links a { color: var(--muted); transition: color .15s; }
+    .nav-links a:hover { color: var(--orange); }
+
+    /* Hero */
+    header.hero {
+      background: linear-gradient(180deg, var(--orange-soft) 0%, var(--white) 100%);
+      padding: 96px 0 88px;
+      text-align: center;
+    }
+    .hero h1 { font-size: clamp(2.1rem, 5vw, 3.4rem); max-width: 800px; margin: 0 auto 20px; }
+    .hero h1 .accent { color: var(--orange); }
+    .hero p { font-size: 1.15rem; color: var(--muted); max-width: 620px; margin: 0 auto 36px; }
+    .btn {
+      display: inline-block; padding: 14px 32px; border-radius: 10px;
+      font-weight: 600; font-size: 1rem; transition: transform .15s, box-shadow .15s;
+    }
+    .btn-primary { background: var(--orange); color: var(--white); box-shadow: 0 4px 14px rgba(234, 88, 12, .25); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(234, 88, 12, .35); }
+    .btn-ghost { color: var(--orange); border: 2px solid var(--orange-border); margin-left: 12px; }
+    .btn-ghost:hover { border-color: var(--orange); }
+
+    /* Sections */
+    section { padding: 80px 0; }
+    .kicker { color: var(--orange); font-weight: 600; text-transform: uppercase; letter-spacing: .08em; font-size: .85rem; margin-bottom: 10px; }
+    section h2 { font-size: 2rem; margin-bottom: 18px; }
+    .lede { color: var(--muted); max-width: 700px; }
+
+    /* About */
+    #about { border-top: 1px solid #F1F5F9; }
+
+    /* Services */
+    #services { background: var(--orange-soft); }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px; }
+    .card {
+      background: var(--white); border: 1px solid var(--orange-border);
+      border-radius: 14px; padding: 32px 28px;
+      transition: transform .15s, box-shadow .15s;
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(234, 88, 12, .12); }
+    .card .icon { font-size: 1.9rem; margin-bottom: 14px; }
+    .card h3 { font-size: 1.2rem; margin-bottom: 10px; }
+    .card p { color: var(--muted); font-size: .95rem; }
+    .badge {
+      display: inline-block; margin-top: 14px; padding: 4px 12px;
+      background: var(--orange-soft); color: var(--orange);
+      border-radius: 999px; font-size: .8rem; font-weight: 600;
+    }
+
+    /* Contact */
+    #contact { text-align: center; }
+    #contact .lede { margin: 0 auto 32px; }
+
+    footer {
+      border-top: 1px solid #F1F5F9; padding: 28px 0; text-align: center;
+      color: var(--muted); font-size: .875rem;
+    }
+    footer .foot-brand { color: var(--orange); font-weight: 600; }
+
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      header.hero { padding: 64px 0 56px; }
+      .btn-ghost { margin-left: 0; margin-top: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="wrap nav-inner">
+      <div class="brand">
+        <!-- Logo placeholder: swap for the official Arven Bridge logo when ready -->
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <path d="M4 44 Q32 12 60 44" stroke="#EA580C" stroke-width="6" fill="none"/>
+          <path d="M4 48 H60" stroke="#F97316" stroke-width="5"/>
+          <path d="M16 46 V33 M32 46 V26 M48 46 V33" stroke="#FDBA74" stroke-width="3"/>
+        </svg>
+        Arven Bridge
+      </div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">What We Do</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap">
+      <h1>Building the bridge between <span class="accent">ideas</span> and <span class="accent">infrastructure</span></h1>
+      <p>Arven Bridge LLC is an Illinois-based company delivering software products, network engineering expertise, and dependable technical contracting.</p>
+      <a class="btn btn-primary" href="#contact">Get in Touch</a>
+      <a class="btn btn-ghost" href="#services">What We Do</a>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="kicker">About</div>
+      <h2>A small company with deep roots in networking &amp; software</h2>
+      <p class="lede">
+        Arven Bridge LLC was founded to bring decades of hands-on IT experience under one roof —
+        from enterprise network engineering to purpose-built software. We believe in solutions that
+        are reliable, secure, and built to last, whether that's an application in your pocket or the
+        infrastructure behind your operations.
+      </p>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="kicker">What We Do</div>
+      <h2>Products &amp; services</h2>
+      <div class="cards">
+        <div class="card">
+          <div class="icon">🛡️</div>
+          <h3>Guardian Alert</h3>
+          <p>Our flagship application — built to keep people informed and protected when it matters most.</p>
+          <span class="badge">Software Product</span>
+        </div>
+        <div class="card">
+          <div class="icon">🌐</div>
+          <h3>Network Engineering</h3>
+          <p>Design, implementation, and support for enterprise networks, backed by 30+ years of industry experience and professional certifications.</p>
+          <span class="badge">Consulting</span>
+        </div>
+        <div class="card">
+          <div class="icon">🏛️</div>
+          <h3>Technical Contracting</h3>
+          <p>Government and private-sector contracting for networking, security, and software development engagements.</p>
+          <span class="badge">Contracting</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="kicker">Contact</div>
+      <h2>Let's talk</h2>
+      <p class="lede">Have a project in mind, or want to learn more about what we do? We'd love to hear from you.</p>
+      <a class="btn btn-primary" href="mailto:contact@arvenbridge.com">contact@arvenbridge.com</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <span class="foot-brand">Arven Bridge LLC</span> · Illinois, USA · © 2026 Arven Bridge LLC. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>
