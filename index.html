@@ -82,6 +82,11 @@
     }
     .card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(234, 88, 12, .12); }
     .card .icon { font-size: 1.9rem; margin-bottom: 14px; }
+    .card-link { display: block; color: inherit; text-decoration: none; }
+    .card .app-icon {
+      display: block; width: 40px; height: 40px;
+      border-radius: 10px; box-shadow: 0 2px 8px rgba(30, 34, 60, .25);
+    }
     .card h3 { font-size: 1.2rem; margin-bottom: 10px; }
     .card p { color: var(--muted); font-size: .95rem; }
     .badge {
@@ -155,12 +160,12 @@
       <div class="kicker">What We Do</div>
       <h2>Products &amp; services</h2>
       <div class="cards">
-        <div class="card">
-          <div class="icon">🛡️</div>
+        <a class="card card-link" href="https://guardianalert.app" target="_blank" rel="noopener">
+          <img class="icon app-icon" src="assets/guardian-alert-icon.png" alt="Guardian Alert app icon">
           <h3>Guardian Alert</h3>
           <p>Our flagship application — built to keep people informed and protected when it matters most.</p>
           <span class="badge">Software Product</span>
-        </div>
+        </a>
         <div class="card">
           <div class="icon">🌐</div>
           <h3>Network Engineering</h3>
